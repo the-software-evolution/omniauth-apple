@@ -58,7 +58,7 @@ module OmniAuth
       end
 
       def authorize_params
-        super && return if options[:nonce] == :ignore
+        super if options[:nonce] == :ignore
 
         super.merge(nonce: new_nonce)
       end
